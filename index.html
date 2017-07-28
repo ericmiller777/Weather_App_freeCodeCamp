@@ -20,5 +20,13 @@
     }
 </style>
 <body>
+    <div class="containe-fluid">
+    <h2 class="weather">test</h2>
+    <div>
+    </div>
+    </div>
+<script>
+$.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139", function (a) { $(".weather").append(a.main.temp) });
+</script>
 </body>
 </html>        
