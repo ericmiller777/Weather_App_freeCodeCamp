@@ -40,6 +40,7 @@ navigator.geolocation.getCurrentPosition(function (b) {
 var latitude = b.coords.latitude;
 var longitude = b.coords.longitude;
 //a.call(null, latitude, longitude);
+$.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp) });
 });
 
 $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp) });
