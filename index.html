@@ -46,7 +46,7 @@ function connectfcc(a) {
     })
     $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp + " " + a.main.pressure) });
 }
-$.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp + " " + a.main.pressure) });
+$.getJSON("https://fcc-weather-api.glitch.me/" , function (a) { $(".weather").append(a.main.temp + " " + a.main.pressure) });
 </script>
 </body>
 </html>        
