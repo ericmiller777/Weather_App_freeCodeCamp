@@ -44,7 +44,7 @@ function connectfcc(a) {
         $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp) });
     })
 }
-connectfcc();
+connectfcc(b);
 </script>
 
 </body>
