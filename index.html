@@ -38,6 +38,7 @@
 <script>
     var latitude;
     var longitude;
+    $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp + " " + a.main.pressure) });
 function connectfcc(a) {
     navigator.geolocation.getCurrentPosition(function (b) {
         latitude = position.coords.latitude;
