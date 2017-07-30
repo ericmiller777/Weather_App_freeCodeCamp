@@ -38,16 +38,14 @@
 <script>
     var latitude;
     var longitude;
-    $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp + " " + a.main.pressure) });
 function connectfcc(a) {
     navigator.geolocation.getCurrentPosition(function (b) {
         latitude = position.coords.latitude;
         longitude = position.coords.latitude;
         a.call(null, latitude, longitude);
     })
-    $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp + " " + a.main.pressure) });
 }
-$.getJSON("https://fcc-weather-api.glitch.me/" , function (a) { $(".weather").append(a.main.temp + " " + a.main.pressure) });
+$.getJSON("https://fcc-weather-api.glitch.me/" , function (a) { $(".weather").append(a.weather.main.temp) });
 </script>
 </body>
 </html>        
