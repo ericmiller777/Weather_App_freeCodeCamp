@@ -40,8 +40,8 @@ navigator.geolocation.getCurrentPosition(function (b) {
 var latitude = position.coords.latitude;
 var longitude = position.coords.longitude;
 a.call(null, latitude, longitude);
-});
 $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) { $(".weather").append(a.main.temp) });
+});
 </script>
 </body>
 </html>        
