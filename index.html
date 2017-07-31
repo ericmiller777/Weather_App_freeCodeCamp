@@ -42,7 +42,7 @@ var latitude = b.coords.latitude;
 var longitude = b.coords.longitude;
 //a.call(null, latitude, longitude);
 $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
-$(".weather").append(a.main.temp);
+$(".weather").append(a.main.temp * 9/5 + 32);
 $(".name").append("The current weather in" + " " + a.name);
 });
 });
