@@ -19,6 +19,7 @@
         border: 1px solid white;
         align-content: center;
         color: white;
+        width: 90%;
     }
     body{
         background-color: rgb(0,207,250);
@@ -41,7 +42,7 @@ var latitude = b.coords.latitude;
 var longitude = b.coords.longitude;
 //a.call(null, latitude, longitude);
 $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
-$(".weather").append(a.main.temp * 9/5 + 32);
+$(".weather").append(a.main.temp);
 $(".name").append("The current weather in" + " " + a.name);
 });
 });
