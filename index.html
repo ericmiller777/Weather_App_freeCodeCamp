@@ -30,7 +30,7 @@
 
     .weatherBox{
         position: absolute;
-        top: 14%;
+        top: 7%;
         border: 10px solid white;
         width: 10%;
         border-radius: 14px;
@@ -54,7 +54,7 @@ var latitude = b.coords.latitude;
 var longitude = b.coords.longitude;
 //a.call(null, latitude, longitude);
 $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
-$(".weather").append(math.round(a.main.temp * 9 / 5 + 32));
+$(".weather").append(math.round(a.main.temp * 9 / 5 + 32 + "&deg;"));
 $(".name").append("The current weather in:" + " " + a.name);
 });
 });
