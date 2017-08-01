@@ -38,6 +38,11 @@
         align-content: center;
     }
 
+    #weather-icon{
+        width: 100%;
+        height: 100%;
+    }
+
 </style>
 <body>
     <div class="containe-fluid">
@@ -57,7 +62,7 @@ var longitude = b.coords.longitude;
 //a.call(null, latitude, longitude);
 $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
 var fahrenheit = a.main.temp * 9 / 5 + 32;
-$("#weatherDiv").prepend(`<img id = "Weather Icon" src="${a.weather[0].icon}"> </img>`);
+$("#weatherDiv").prepend(`<img id = "Weather-Icon" src="${a.weather[0].icon}"> </img>`);
 $(".weather").append( Math.round(fahrenheit) + "&deg;");
 $(".name").append(`The current weather in: ${a.name}`);
 });
