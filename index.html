@@ -69,7 +69,7 @@ $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lo
 var fahrenheit = a.main.temp * 9 / 5 + 32;
 $("#weatherText").append(a.weather[0].main + "/b" + a.weather[0].description);
 $("#weatherDiv").prepend(`<img id = "Weather-Icon" src="${a.weather[0].icon}"> </img>`);
-$(".weather").append( Math.round(fahrenheit) + "&deg;" + "&8457;");
+$(".weather").append( Math.round(fahrenheit) + "&deg;" + "<p> &8457; </p> ");
 $(".name").append(`The current weather in: ${a.name}`);
 });
 });
