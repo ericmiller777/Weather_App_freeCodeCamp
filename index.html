@@ -40,13 +40,13 @@
 <body>
     <div class="containe-fluid">
     <div class="row">
-        <div id = "weatherDiv" class="col-xs-12 top">
+        <div class="col-xs-12 top">
                 <h1 id="topText" class="yellow-text name"></h1>
         </div>
 </div>
-    <div style="height:10px">
+    <div class style="height:10px">
     </div>
-    <div class="weatherbox"> 
+    <div id = "weatherDiv" class="weatherbox"> 
     <h2 style="color: white" class="weather"></h2>
     </div>
     </div>
@@ -56,7 +56,7 @@ var latitude = b.coords.latitude;
 var longitude = b.coords.longitude;
 //a.call(null, latitude, longitude);
 $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
-$("#weatherDiv").appendTo(`<img id ="` + "Weather Icon" + `"src="` + a.weather[0].icon + `"` + ` </img>`);
+$("#weatherDiv").append(`<img id ="` + "Weather Icon" + `"src="` + a.weather[0].icon + `"` + ` </img>`);
 $(".weather").append(a.main.temp * 9 / 5 + 32);
 $(".name").append("The current weather in:" + " " + a.name);
 });
