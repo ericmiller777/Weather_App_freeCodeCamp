@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -23,12 +24,12 @@
         overflow: hidden;
     }
 
-    body{
-        background-color: rgb(0,207,250);
+    body {
+        background-color: rgb(0, 207, 250);
         overflow-x: hidden;
     }
 
-    .weatherBox{
+    .weatherBox {
         position: absolute;
         top: 8%;
         left: 45.7%;
@@ -37,51 +38,53 @@
         border-radius: 14px;
     }
 
-    #weather-icon{
+    #weather-icon {
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
-
 </style>
+
 <body>
-<div class="container-fluid">
-<div class="row">
-</div>
-<div id = "weatherDiv" class="weatherbox"> 
-    <h2 style="color: white; text-align: center;" class="weather"></h2>
-<div class = "row">
-<div class = "col-xs-6">
-<button id="fahrenheitButton" Class="btn btn-primary" style="width: 100%;">&#8457;</button>
-</div>
-<div class = "col-xs-6">
-<button id="celciusButton" Class="btn btn-primary" style="width: 100%;">&#8451;</button>
-</div>
-</div>
-</div>
-</div>
-<script>
-navigator.geolocation.getCurrentPosition(function (b) {
-var latitude = b.coords.latitude;
-var longitude = b.coords.longitude;
-//a.call(null, latitude, longitude);
-$.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
-var fahrenheit = a.main.temp * 9 / 5 + 32;
-var celcius = a.main.temp;
-$("#weatherDiv").prepend( `<h2 style = " text-align: center; color: white">${a.name}</h2><br>` + `<img id = "Weather-Icon" src="${a.weather[0].icon}"> </img>`);
-$(".weather").append( a.weather[0].description + "<br>" + Math.round(fahrenheit) + "&#8457;");
-//$(".name").append(`The current weather in: ${a.name}`);
-$("#fahrenheitButton").on("click", function () {
-    $(".weather").html("");
-    $(".weather").append( a.weather[0].description + "<br>" + Math.round(fahrenheit) + "&#8457;");
-});
-$("#celciusButton").on("click", function () {
-    $(".weather").html("");
-    $(".weather").append( a.weather[0].description + "<br>" + Math.round(celcius) + "&#8451;");
-});
-});
-});
-</script>
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+        <div id="weatherDiv" class="weatherbox">
+            <h2 style="color: white; text-align: center;" class="weather"></h2>
+            <div class="row">
+                <div class="col-xs-6">
+                    <button id="fahrenheitButton" Class="btn btn-primary" style="width: 100%;">&#8457;</button>
+                </div>
+                <div class="col-xs-6">
+                    <button id="celciusButton" Class="btn btn-primary" style="width: 100%;">&#8451;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        navigator.geolocation.getCurrentPosition(function (b) {
+            var latitude = b.coords.latitude;
+            var longitude = b.coords.longitude;
+            //a.call(null, latitude, longitude);
+            $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
+                var fahrenheit = a.main.temp * 9 / 5 + 32;
+                var celcius = a.main.temp;
+                $("#weatherDiv").prepend(`<h2 style = " text-align: center; color: white">${a.name}</h2><br>` + `<img id = "Weather-Icon" src="${a.weather[0].icon}"> </img>`);
+                $(".weather").append(a.weather[0].description + "<br>" + Math.round(fahrenheit) + "&#8457;");
+                //$(".name").append(`The current weather in: ${a.name}`);
+                $("#fahrenheitButton").on("click", function () {
+                    $(".weather").html("");
+                    $(".weather").append(a.weather[0].description + "<br>" + Math.round(fahrenheit) + "&#8457;");
+                });
+                $("#celciusButton").on("click", function () {
+                    $(".weather").html("");
+                    $(".weather").append(a.weather[0].description + "<br>" + Math.round(celcius) + "&#8451;");
+                });
+            });
+        });
+
+    </script>
 
 </body>
-</html>        
+
+</html>
