@@ -72,6 +72,7 @@
                 var celcius = a.main.temp;
                 $("#weatherDiv").prepend(`<h2 style = " text-align: center; color: white">The Current Weather in: <br> ${a.name}</h2><br>` + `<img id = "Weather-Icon" src="${a.weather[0].icon}"> </img>`);
                 $(".weather").append(a.weather[0].description + "<br>" + Math.round(fahrenheit) + "&#8457;");
+                $("#weatherDiv").center();
                 //$(".name").append(`The current weather in: ${a.name}`);
                 $("#fahrenheitButton").on("click", function () {
                     $(".weather").html("");
@@ -81,6 +82,7 @@
                 $("#celciusButton").on("click", function () {
                     $(".weather").html("");
                     $(".weather").append(a.weather[0].description + "<br>" + Math.round(celcius) + "&#8451;");
+                    $("#weatherDiv").center();
                 });
             });
         });
@@ -94,7 +96,7 @@
     return this;
 }
 
-$("#weatherDiv").center();
+
 
     </script>
 
