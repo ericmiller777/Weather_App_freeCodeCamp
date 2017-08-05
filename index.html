@@ -76,6 +76,7 @@
                 $("#fahrenheitButton").on("click", function () {
                     $(".weather").html("");
                     $(".weather").append(a.weather[0].description + "<br>" + Math.round(fahrenheit) + "&#8457;");
+                    $("#weatherDiv").center();
                 });
                 $("#celciusButton").on("click", function () {
                     $(".weather").html("");
