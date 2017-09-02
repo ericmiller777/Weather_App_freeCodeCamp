@@ -77,7 +77,7 @@
                    weatherIcon = new Image();
                    weatherIcon.src = "mist.png"
                 }
-                $("#weatherDiv").prepend(`<h2 style = " text-align: center; color: white">The Current Weather in: <br> ${a.name}</h2><br>` + `<img id = "Weather-Icon" src="${weatherIcon}"> </img>`);
+                $("#weatherDiv").prepend(`<h2 style = " text-align: center; color: white">The Current Weather in: <br> ${a.name}</h2><br>` + `<img id = "Weather-Icon" src="mist.png"> </img>`);
                 $(".weather").append(a.weather[0].description + "<br>" + Math.round(fahrenheit) + "&#8457;");
                 $("#weatherDiv").center();
                 //$(".name").append(`The current weather in: ${a.name}`);
