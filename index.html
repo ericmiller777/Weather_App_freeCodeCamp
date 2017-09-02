@@ -71,7 +71,7 @@
             $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (a) {
                 var fahrenheit = a.main.temp * 9 / 5 + 32;
                 var celcius = a.main.temp;
-                if(a.weather[0] != null){
+                if(a.weather[0].icon != null){
                 var weatherIcon = a.weather[0].icon;
                 }else{
                    weatherIcon = new Image();
